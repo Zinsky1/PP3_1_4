@@ -1,0 +1,11 @@
+body {
+    background-color:#F9F6EE;
+}
+
+.col-md-9 {
+    background-color: aqua;
+    height: 100vh;
+}
+#home {
+    background-color: #F9F6EE;
+}

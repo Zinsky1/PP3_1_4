@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>User Page</title>
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto me-auto mb-2 mb-xl-0"  >
+                        <li class="navbar-text mr-5">
+                            <a class="navbar-text" style="color: #F9F6EE" th:text="${user.email}">
+                                email
+                            </a>
+                        </li>
+                        <li class="navbar-text">
+                            <a class="navbar-text" style="color: #F9F6EE" th:text="${'With roles: ' + user.getAuthorities()}">
+                                roles
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="nav-link"  style="color: gray" href="/logout">
+                        Logout
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <ul class="nav flex-column nav-pills  m-2" style="width: 350px; height: 100vh; background-color: white">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-selected="true" th:text="${user.firstname}">user</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <h1 class="text m-4">User Information-page</h1>
+            <table class="table table-striped" title="about user">
+                <a>About user</a>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>age</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${user.getId()}">1</td>
+                    <td th:text="${user.getFirstname()}">fn</td>
+                    <td th:text="${user.getLastname()}">ln</td>
+                    <td th:text="${user.getAge()}">age</td>
+                    <th th:text="${user.getEmail()}">em</th>
+                    <th th:text="${'' + user.getAuthorities()}">rl</th>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
